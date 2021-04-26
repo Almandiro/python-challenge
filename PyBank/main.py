@@ -6,6 +6,7 @@ import os
 import csv
 
 csvpath = os.path.join('', 'Resources', 'budget_data.csv')
+file_to_output = os.path.join('', 'Analysis', 'initReport.txt')
 
 # # Method 1: Plain Reading of CSV files
 # with open(csvpath, 'r') as file_handler:
@@ -57,11 +58,25 @@ with open(csvpath) as csvfile:
 
     average = (float(amountIncrease/increaseCount)+float(amountIncrease/increaseCount)) / 2
     
-    print ("Profit & Loss Report: ")
-    print ("--------------------- ")
-    print ("")
-    print ("Month Count:" + str(numMonths))
-    print ("Profit / Loss Total: " + str(totalProfit))
-    print ("Average: " + str(average))
-    print ("Greatest Increase in Profits:"+str(totalIncrease))
-    print ("Greatest Decrease in Profits:"+str(totalDecrease))
+    
+    
+    with open(file_to_output, "w") as txt_file:
+        
+        #stringToFile = "Financial Analysis \n --------------------- \n\n Month Count:",str(numMonths)m"Profit / Loss Total: ",str(totalProfit), "Average: ",str(average),"Greatest Increase in Profits:",str(totalIncrease),"Greatest Decrease in Profits:",str(totalDecrease)
+                        
+        print ("Financial Analysis: ")
+        txt_file.write("Financial Analysis: \n")
+        print ("--------------------- ")
+        txt_file.write("--------------------- \n")
+        print ("")
+        txt_file.write("\n")
+        print ("Month Count:" + str(numMonths))
+        txt_file.write("Month Count:" + str(numMonths)+"\n")
+        print ("Profit / Loss Total: " + str(totalProfit))
+        txt_file.write("Profit / Loss Total: " + str(totalProfit)+"\n")
+        print ("Average: " + str(average))
+        txt_file.write("Average: " + str(average)+"\n")
+        print ("Greatest Increase in Profits:"+str(totalIncrease))
+        txt_file.write("Greatest Increase in Profits:"+str(totalIncrease)+"\n")
+        print ("Greatest Decrease in Profits:"+str(totalDecrease))
+        txt_file.write("Greatest Decrease in Profits:"+str(totalDecrease)+"\n")

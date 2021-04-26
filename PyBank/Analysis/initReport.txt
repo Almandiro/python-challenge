@@ -1,0 +1,8 @@
+Profit & Loss Report: 
+--------------------- 
+
+Month Count:86
+Profit / Loss Total: 38382578
+Average: 266434.0
+Greatest Increase in Profits:['Feb-2010', '984655']
+Greatest Decrease in Profits:['Feb-2017', '671099']
